@@ -9,7 +9,7 @@ public class ALConvert {
                 "Shubham", "Neelam" };
         List al = Arrays.asList(geeks);
         al.set(1, "HI");
-        // al.add("Hello"); Not allowed: Returns a fixed-size list backed by the
+        // al.add("Hello"); aDD AFTER .asList Not allowed: Returns a fixed-size list backed by the
         // specified array{ An attempt of adding more elements would cause
         // UnsupportedOperationException.}
         System.out.println(al);
@@ -19,6 +19,7 @@ public class ALConvert {
         // Arrays.asList(array reference) as an argument to it (i.e. as an constructor
         // argument of ArrayList).
 
+        //Sol'n of above prob
         List<String> ak = new ArrayList<String>(Arrays.asList(geeks));
         ak.add("Shashank");
         ak.add("Nishant");

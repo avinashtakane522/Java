@@ -1,0 +1,30 @@
+functions
+
+Basic functions of collections
+collections.min()              ;
+collections.max()              ;
+Collections.addAll(aj, geek)   ;
+
+ArrayList:
+
+add()           ;
+addAll()        ;
+remove()        ;
+set()           ;
+equals()        ;
+Arrays.asList() ;
+
+TOLookAfter
+
+Q 12. Method 4
+Q 20. Method1. In Java 8: This method includes converting
+the HashMap to a Stream
+
+//Today HW 16 OCt 2024
+1. PrintDuplicateHM
+2. Convert HashMap to TreeMap 1.putAll(), 2. Using forEach()
+
+Q to ask
+1. Like in HM when we r converting HM to TM there are near about 4 to5 methods
+like one of then conversion Using Google’s Guava library. SO which
+one shhould we have to follow or we can decide on our own.
