@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 import java.io.*;
 
 public class Test2 {
@@ -77,10 +78,30 @@ public class Test2 {
 		// 8. merge two unsorted arrays into single sorted array using Java 8 streams
 		int[] a = new int[] { 4, 2, 7, 1 };
 
-		int[] b = new int[] { 8, 3, 9, 5 , 5};
+		int[] b = new int[] { 8, 3, 9, 5, 5 };
 		int[] withDup = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().toArray();
 		System.out.println("\n Sorted array: " + Arrays.toString(withDup));
 		int[] withoutDup = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().distinct().toArray();
 		System.out.println("\n Sorted array: " + Arrays.toString(withoutDup));
+		System.out.println("\n get three maximum numbers and three minimum numbers from the given list of integers");
+
+		// 9. get three maximum numbers and three minimum numbers from the given list of
+		// integers
+		System.out.print("\nFirst three max :");
+		intlist.stream().sorted(Comparator.reverseOrder()).limit(3).forEach(System.out::println);
+		System.out.print("\nFirst three min :");
+		intlist.stream().sorted().distinct().limit(3).forEach(System.out::println);
+		System.out.println("\n to check if two strings are anagrams or not");
+
+		// 10. to check if two strings are anagrams or not
+		String s1 = "RaceCar";
+		String s2 = "CarRace";
+		s1 = Stream.of(s1.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+		s2 = Stream.of(s2.split("")).map(String::toUpperCase).sorted().collect(Collectors.joining());
+		if (s1.equals(s2)) {
+			System.out.println("Two strings are anagrams");
+		} else {
+			System.out.println("Two strings are not anagrams");
+		}
 	}
 }

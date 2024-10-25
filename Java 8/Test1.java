@@ -11,17 +11,10 @@ import java.util.stream.Collectors;
 
 public class Test1 {
     public static void main(String[] args) {
-        String s = "string data to count each character";
-
-        Map<Character, Long> ch = s.chars().mapToObj(c -> (char) c).filter(c -> c !=' ').
-                            collect(Collectors.groupingBy(c -> c, Collectors.counting()));
-        
-        ch.entrySet().stream().forEach(e -> System.out.print(e.getKey()+" : "+e.getValue()+", "));
-
         String str = "Java Concept Of The Day";
 
-        List<String> list = new ArrayList<>();
+        String reversedStr = Arrays.stream(str.split(" ")).collect(Collectors.joining(" "));
 
-        String[] s1 = str.split(' ');
+        System.out.println(reversedStr);
     }
 }
