@@ -14,7 +14,7 @@ class Runner2{
     }
 }
 
-public class App{
+public class Sequential{
     public static void main(String[] args) {
         Runner1 runner1 = new Runner1();
         Runner2 runner2 = new Runner2();
