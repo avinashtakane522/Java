@@ -12,6 +12,7 @@ public class Test {
         List<Integer> intlist = Arrays.asList(71, 18, 42, 21, 67, 30, 42, 14, 56, 87, 18, 50);
         String str = "Java Concept Of The Day";
         int[] arr = new int[]{4, 2, 5, 1, 4, 103, 987};
+        List<String> listOfString = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "Six");
         Map<String, Long> strmap;
         Map<Integer, Long> intmap;
         Map<Character, Long> charmap;
@@ -65,8 +66,8 @@ public class Test {
         List<Integer> list2 = Arrays.asList(12, 56, 17, 21, 94, 34);
         list1.stream().filter(list2::contains).forEach(System.out::println);
 
-        //16. each word of a string using Java 8 streams
-        System.out.println("\n each word of a string using Java 8 streams");
+        //16.Reverse each word of a string using Java 8 streams
+        System.out.println("\n Reverse each word of a string using Java 8 streams");
         String reverseStr = Arrays.stream(str.split(" ")).map(w -> new StringBuilder(w).reverse())
                 .collect(Collectors.joining(" "));
         System.out.println(reverseStr);
@@ -104,7 +105,6 @@ public class Test {
 
         //21. find out those strings which start with a number
         System.out.println("\nfind out those strings which start with a number: ");
-        List<String> listOfString = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "Six");
         listOfString.stream().filter(str3 -> Character.isDigit(str3.charAt(0)))
                 .forEach(System.out::println);
 
@@ -119,8 +119,10 @@ public class Test {
 
         //24. first repeated character in a string
         System.out.println("\n first repeated character in a string");
-        Arrays.stream(str.split("")).filter(ch -> !strSet.add(ch)).collect(Collectors.toSet())
-                .forEach(System.out::println);
+        Character firstRepeaChar = str.chars().mapToObj(en -> (char) en).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,
+                Collectors.counting())).entrySet().stream().filter(en -> en.getValue()>1)
+                .map(Map.Entry::getKey).findFirst().orElse(null);
+        System.out.println(firstRepeaChar);
 
         //25. first non-repeated character in a string
         System.out.println("\n first non-repeated character in a string: ");
