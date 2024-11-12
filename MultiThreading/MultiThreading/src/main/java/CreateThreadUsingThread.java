@@ -1,4 +1,4 @@
-class Runner1 extends Thread {
+class CreateRunner1 extends Thread {
 
     @Override
     public void run() {
@@ -8,7 +8,7 @@ class Runner1 extends Thread {
     }
 }
 
-class Runner2 extends Thread {
+class CreateRunner2 extends Thread {
 
     @Override
     public void run() {
@@ -20,8 +20,8 @@ class Runner2 extends Thread {
 
 public class CreateThreadUsingThread {
     public static void main(String[] args) {
-        Thread t1 = new Runner1();
-        Thread t2 = new Runner2();
+        Thread t1 = new CreateRunner1();
+        Thread t2 = new CreateRunner2();
 
         t1.start();
         t2.start();

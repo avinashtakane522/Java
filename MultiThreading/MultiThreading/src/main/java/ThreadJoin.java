@@ -1,4 +1,4 @@
-class Runner1 extends Thread {
+class ThreadJoinRunner1 extends Thread {
 
     @Override
     public void run() {
@@ -13,7 +13,7 @@ class Runner1 extends Thread {
     }
 }
 
-class Runner2 extends Thread {
+class ThreadJoinRunner2 extends Thread {
 
     @Override
     public void run() {
@@ -30,8 +30,8 @@ class Runner2 extends Thread {
 
 public class ThreadJoin {
     public static void main(String[] args) {
-        Thread t1 = new Runner1();
-        Thread t2 = new Runner2();
+        Thread t1 = new ThreadJoinRunner1();
+        Thread t2 = new ThreadJoinRunner2();
 
         t1.start();
         try {
