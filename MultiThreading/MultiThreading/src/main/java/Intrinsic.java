@@ -5,6 +5,7 @@ public class Intrinsic {
     //usually it is not good practise to use synchronized word here
     public static void incrementCounter1(){
         //class locking
+        //iF WE RENOVE VOID from here then it will call objet level locking
         //rule of thum is: we synchronized block that are 100% necessary
         synchronized (Intrinsic.class){
             counter1++;
