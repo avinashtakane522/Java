@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 
 public class CallableInterface implements Callable<String> {
     private int id;
+    int b;
     public CallableInterface(int id) {
         this.id = id;
     }
