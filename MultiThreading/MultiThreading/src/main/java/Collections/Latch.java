@@ -39,7 +39,7 @@ public class Latch {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("All tasks executed...");
+        System.out.println("All tasks executed....");
         service.shutdown();
     }
 }
