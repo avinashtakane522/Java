@@ -3,6 +3,10 @@ package Parallelization;
 public class ParallelSum {
     private ParallelWorkers[] workers;
     private int noOfThreads;
+
+    public ParallelSum(){
+    }
+
     public ParallelSum(int noOfThreads){
         this.workers = new ParallelWorkers[noOfThreads];
         this.noOfThreads = noOfThreads;

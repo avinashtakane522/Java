@@ -1,6 +1,6 @@
 package Parallelization;
 
-public class AddNumbersScheduleWay {
+public class SequentialWay {
 
     public static int sum(int[] nums){
         int sum = 0;
