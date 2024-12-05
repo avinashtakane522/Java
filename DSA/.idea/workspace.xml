@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="140e12af-9595-42fa-957f-1c1339b14182" name="Changes" comment="Merge Sort DSA">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MultiThreading/MultiThreading/src/main/java/Parallelization/MergeSortParallelExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +93,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733167322406</updated>
       <workItem from="1733167323840" duration="3990000" />
-      <workItem from="1733332270268" duration="1167000" />
+      <workItem from="1733332270268" duration="1200000" />
+      <workItem from="1733410528796" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <option name="closed" value="true" />
