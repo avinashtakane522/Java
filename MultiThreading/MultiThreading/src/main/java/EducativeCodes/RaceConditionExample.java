@@ -3,6 +3,8 @@ package EducativeCodes;
 class BankAccount {
     private int balance = 100;
 
+    //To avoid this synchronize the withdraw method.
+    //public synchronized void withdraw(int amount)
     public void withdraw(int amount) {
         if (balance >= amount) {
             System.out.println(Thread.currentThread().getName() + " is withdrawing " + amount);
