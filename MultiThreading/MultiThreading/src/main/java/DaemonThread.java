@@ -2,6 +2,7 @@ class Daemon implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("1.Is Daemon Thread: " + Thread.currentThread().isDaemon());
         while (true) {
             try {
                 Thread.sleep(1000);
@@ -15,6 +16,7 @@ class Daemon implements Runnable {
 
 class NormalThread implements Runnable {
     public void run() {
+        System.out.println("2.Is Daemon Thread: " + Thread.currentThread().isDaemon());
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
