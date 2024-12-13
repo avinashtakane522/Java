@@ -6,7 +6,7 @@ class ObjectLockClass {
     }
 }
 
-public class ObjectLock {
+public class ObjectLockExample {
     public static void main(String[] args) {
         ObjectLockClass obj1 = new ObjectLockClass();
         ObjectLockClass obj2 = new ObjectLockClass();
