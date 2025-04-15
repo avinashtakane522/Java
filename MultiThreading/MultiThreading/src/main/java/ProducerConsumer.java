@@ -13,11 +13,12 @@ class Process1{
             while (true){
                 if (list.size() == UPPER_LIMIT){
                     System.out.println("Waiting to remove operation to complete...");
+                    //lock.notify(); i have added here
                     lock.wait();
                 }
                 else {
                     list.add(++value);
-                    System.out.println("Adding: "+value);
+                    System.out.println("Adding: "+value);      
                     lock.notify();
                 }
                 Thread.sleep(500);
@@ -31,6 +32,7 @@ class Process1{
                 if (list.size() == LOWER_LIMIT){
                     System.out.println("Waiting to adding operation to complete...");
                     value=0;
+                  //lock.notify(); i have added here
                     lock.wait();
                 }
                 else {

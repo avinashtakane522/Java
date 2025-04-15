@@ -1,58 +1,38 @@
-class EvenOddLogic{
-    private int count=1;
-    private int limit;
-
-    public EvenOddLogic(int limit){
-        this.limit = limit;
+class Pt1 implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
     }
+}
 
-    public synchronized void printEven() throws InterruptedException {
-        while(count<=limit) {
-        while(count%2 != 0){
-            wait();
+class Pt2 implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 11; i <= 20; i++) {
+            System.out.print(i+" ");
         }
-        System.out.println(count+"is Even number ");
-        count++;
-            notify();
-    }}
-    public synchronized void printOdd() throws InterruptedException {
-        while(count<=limit) {
-        while(count%2 == 0){
-            wait();
-        }
-        System.out.print(count+"is odd number ");
-        count++;
-        notify();
-    }}
+        System.out.println();
+    }
 }
 
 public class Test {
-    public static void main(String[] args) throws InterruptedException {
-        EvenOddLogic eo = new EvenOddLogic(10);
-        Thread even = new Thread(new Runnable(){
-            public void run(){
-                try {
-                    eo.printEven();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+    public static void main(String[] args) {
+        Thread p1 = new Thread(new Pt1());
+        Thread p2 = new Thread(new Pt2());
+        System.out.println(Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getPriority());
 
-        Thread odd = new Thread(new Runnable(){
-            public void run(){
-                try {
-                    eo.printOdd();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        p1.setPriority(Thread.MAX_PRIORITY);
+        System.out.println(p1.getName());
+        System.out.println(p1.getPriority());
+        p2.setPriority(Thread.MIN_PRIORITY);
+        System.out.println(p2.getName());
+        System.out.println(p2.getPriority());
 
-        even.start();
-        odd.start();
-
-        even.join();
-        odd.join();
+        p2.start();
+        p1.start();
     }
 }
